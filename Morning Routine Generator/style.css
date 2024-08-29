@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'HomeVideo';
+    src: url('fonts/HomeVideo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'HomeVideo', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+header, footer {
+    padding: 10px;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
+    padding: 20px 10px; /* Increased top padding */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 2px #aaa;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 20px; /* Added margin-top */
+    margin-bottom: 15px;
+    transition: background-color 0.3s, color 0.3s;
+    letter-spacing: -0.5px;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+#routineDisplay {
+    width: 100%;
+    max-width: 600px;
+}
+
+.category-section {
+    margin-bottom: 15px;
+}
+
+.activity {
+    background-color: #222;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.header-blurbs {
+    position: relative;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.blurb {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-size: 1em;
+    display: none;
+}
+
+.blurb.active {
+    opacity: 1;
+    display: block;
+}
