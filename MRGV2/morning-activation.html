@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morning Activation Routine - Fullproof for Mornings</title>
+    <style>
+        @font-face {
+            font-family: 'DOTMBold';
+            src: url('fonts/DOTMBold.TTF') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'DOTMATRI';
+            src: url('fonts/DOTMATRI.TTF') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #131313;
+            color: #FFFFFF;
+            min-height: 100vh;
+            font-family: 'DOTMATRI', sans-serif;
+        }
+
+        nav {
+            background-color: rgba(12, 12, 12, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(5, 5, 5, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.125rem;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .routine-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .routine-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .routine-header h1 {
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .overview {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.125rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .overview h2 {
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .overview p {
+            color: #FFFFFF;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 0.125rem;
+            text-align: center;
+        }
+
+        .info-item h3 {
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .info-item p {
+            color: #FFFFFF;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.125rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background-color: #FFFFFF;
+            color: #131313;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .step-title {
+            color: #FFFFFF;
+            font-size: 1.3rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .step-description {
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .instructions {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.125rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructions h4 {
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .instructions ul {
+            color: #FFFFFF;
+            list-style-type: none;
+        }
+
+        .instructions li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .instructions li::before {
+            content: "•";
+            color: #FFFFFF;
+            position: absolute;
+            left: 0;
+        }
+
+        .video-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #FFFFFF;
+            color: #131313;
+            text-decoration: none;
+            border-radius: 0.125rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 2px solid #FFFFFF;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .video-link:hover {
+            background-color: #131313;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-family: 'DOTMBold', sans-serif;
+            font-size: 0.9rem;
+            color: #FFFFFF;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .routine-container {
+                padding: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .routine-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .step-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">Fullproof for Mornings</a>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/routines">Routines</a>
+            <a href="/generator">Generator</a>
+        </div>
+    </nav>
+
+    <main class="routine-container">
+        <div class="routine-header">
+            <h1>Morning Activation Routine</h1>
+        </div>
+
+        <section class="overview">
+            <h2>Overview</h2>
+            <p>This routine is designed to awaken your body and mind, setting a positive tone for the day ahead. Perfect for beginners and those with busy schedules, this quick and effective routine will help you cultivate balance, reduce tension, and center your mind.</p>
+            
+            <div class="quick-info">
+                <div class="info-item">
+                    <h3>Duration</h3>
+                    <p>30 minutes</p>
+                </div>
+                <div class="info-item">
+                    <h3>Goal</h3>
+                    <p>Activate body and mind</p>
+                </div>
+                <div class="info-item">
+                    <h3>Equipment</h3>
+                    <p>Yoga mat (optional), quiet space</p>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h4>General Guidelines:</h4>
+                <ul>
+                    <li>Find a calm, preferably outdoor space for your practice</li>
+                    <li>Focus on the flow of each movement and your breath</li>
+                    <li>Stay mindful and present throughout the routine</li>
+                    <li>Listen to your body and modify as needed</li>
+                    <li>Remember, consistency is key to transforming your mornings</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="steps-container">
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Qi Gong Body Activation</h3>
+                </div>
+                <p class="step-description">Begin your morning with gentle, flowing movements to awaken your body's energy. This practice cultivates balance, reduces tension, and centers your mind for the day ahead.</p>
+                <a href="https://www.youtube.com/watch?v=8sJ5N9nsEmM" class="video-link" target="_blank">Watch Video Guide</a>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Day Kickstart Yoga</h3>
+                </div>
+                <p class="step-description">This short and sweet yoga sequence is perfect for starting your day. It's a well-rounded practice that can also be used to wind down in the evening, promoting flexibility and mindfulness.</p>
+                <a href="https://www.youtube.com/watch?v=o_73FeXw3ZI" class="video-link" target="_blank">Watch Video Guide</a>
+            </div>
+
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Daily Qigong Routine</h3>
+                </div>
+                <p class="step-description">Conclude your morning activation with this simple yet powerful Qigong routine. It helps balance your overall energy and increases circulation throughout your entire body, setting a positive tone for the day.</p>
+                <a href="https://www.youtube.com/watch?v=Y88zYo0YlOo" class="video-link" target="_blank">Watch Video Guide</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Fullproof
+    </footer>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routines - Fullproof for Mornings</title>
+    <style>
+        @font-face {
+            font-family: 'DOTMBold';
+            src: url('fonts/DOTMBold.TTF') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'DOTMATRI';
+            src: url('fonts/DOTMATRI.TTF') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #131313;
+            color: #FFFFFF;
+            min-height: 100vh;
+            font-family: 'DOTMATRI', sans-serif;
+        }
+
+        nav {
+            background-color: rgba(12, 12, 12, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(5, 5, 5, 0.2);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.125rem;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .routines-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .routines-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .routines-header h1 {
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .routines-header p {
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .routines-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .routine-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.125rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .routine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+        }
+
+        .routine-content h2 {
+            color: #FFFFFF;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .routine-content p {
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .routine-stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.125rem;
+            font-size: 0.9rem;
+            color: #FFFFFF;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #FFFFFF;
+            color: #131313;
+            text-decoration: none;
+            border-radius: 0.125rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 2px solid #FFFFFF;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        .read-more:hover {
+            background-color: #131313;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .routines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .routines-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .routines-header p {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="logo">Fullproof for Mornings</a>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/routines">Routines</a>
+            <a href="/generator">Generator</a>
+        </div>
+    </nav>
+    
+    <main class="routines-section">
+        <div class="routines-header">
+            <h1>Curated Morning Routines</h1>
+            <p>Discover carefully crafted morning routines designed to help you start your day with purpose and energy. Each routine can be customized to fit your lifestyle and goals.</p>
+        </div>
+        
+        <div class="routines-grid">
+            <div class="routine-card">
+                <div class="routine-content">
+                    <h2>Morning Activation</h2>
+                    <div class="routine-stats">
+                        <span class="stat">30 minutes</span>
+                        <span class="stat">Beginner Friendly</span>
+                    </div>
+                    <p>Start your day with mindfulness and intention. This routine focuses on body activation.</p>
+                    <a href="/morning-activation.html" class="read-more">Learn More</a>
+                </div>
+            </div>
+
+            <div class="routine-card">
+                <div class="routine-content">
+                    <h2>Energetic Start</h2>
+                    <div class="routine-stats">
+                        <span class="stat">60 minutes</span>
+                        <span class="stat">Intermediate</span>
+                    </div>
+                    <p>Boost your energy and productivity with this dynamic routine. Combining exercise, nutrition, and goal-setting to kickstart your day with maximum momentum.</p>
+                    <a href="/energetic-start.html" class="read-more">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

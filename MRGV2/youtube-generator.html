@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morning Routine Generator</title>
+  <style>
+    /* Black background and flashy animations */
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    
+    #generate-btn {
+      padding: 15px 30px;
+      background-color: #ff007f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      animation: pulse 1.5s infinite;
+    }
+
+    #generate-btn:hover {
+      background-color: #ff4081;
+    }
+
+    .video-container {
+      display: none; /* Initially hidden */
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .video-box {
+      width: 320px;
+      height: 180px;
+      animation: fadeIn 2s ease-out forwards;
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    h3 {
+      display: none; /* Initially hidden */
+      animation: popIn 2s ease-in-out forwards;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Morning Routine Generator</h1>
+  
+  <button id="generate-btn">Generate Activities</button>
+
+  <div class="video-container" id="video-container">
+    <div class="video-box" id="video1"></div>
+    <div class="video-box" id="video2"></div>
+    <div class="video-box" id="video3"></div>
+  </div>
+
+  <h3 id="total-duration-display">Approximately <span id="total-duration">0</span> minutes</h3>
+
+  <script>
+    // Example video IDs (Replace with real ones)
+    const videoIds = ['lBJ171P6WkM', 'VJ7QlwZPCQ8', 'lwlEJ2O-6HM'];
+
+    // YouTube Data API key (replace with your own key)
+    const apiKey = 'AIzaSyC75n_1DwBOMmjR9W6SId8fZF6YDf2TL4w';
+
+    // Function to fetch video details including duration
+    async function getVideoDetails(videoId) {
+      const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${apiKey}`);
+      const data = await response.json();
+      return data.items[0].contentDetails.duration;
+    }
+
+    // Function to convert ISO 8601 duration to minutes
+    function convertDurationToMinutes(duration) {
+      const regex = /PT(\d+H)?(\d+M)?(\d+S)?/;
+      const matches = duration.match(regex);
+
+      const hours = matches[1] ? parseInt(matches[1].replace('H', '')) : 0;
+      const minutes = matches[2] ? parseInt(matches[2].replace('M', '')) : 0;
+      const seconds = matches[3] ? parseInt(matches[3].replace('S', '')) : 0;
+
+      return hours * 60 + minutes + Math.round(seconds / 60);
+    }
+
+    // Main function to generate activities and calculate total duration
+    async function generateActivities() {
+      let totalDuration = 0;
+      
+      // Unhide the video container and total duration once videos are generated
+      document.getElementById('video-container').style.display = 'flex';
+      document.getElementById('total-duration-display').style.display = 'block';
+
+      for (let i = 0; i < videoIds.length; i++) {
+        const duration = await getVideoDetails(videoIds[i]);
+        const durationInMinutes = convertDurationToMinutes(duration);
+        totalDuration += durationInMinutes;
+
+        // Embed the YouTube video into the video box
+        document.getElementById(`video${i + 1}`).innerHTML = `<iframe width="320" height="180" src="https://www.youtube.com/embed/${videoIds[i]}" frameborder="0" allowfullscreen></iframe>`;
+      }
+
+      // Update total duration on the page
+      document.getElementById('total-duration').textContent = totalDuration;
+    }
+
+    // Event listener for the "Generate Activities" button
+    document.getElementById('generate-btn').addEventListener('click', generateActivities);
+  </script>
+
+</body>
+</html>

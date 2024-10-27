@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Fullproof for Mornings</title>
+    <style>
+        @font-face {
+            font-family: 'DOTMBold';
+            src: url('fonts/DOTMBold.TTF') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'VTCSwitchblade';
+            src: url('fonts/VTCSwitchbladeRomance.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'DOTMATRI';
+            src: url('fonts/DOTMATRI.TTF') format('truetype');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #131313;
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'DOTMATRI', sans-serif;
+        }
+
+        .enter-container {
+            text-align: center;
+            padding: 2rem;
+            background-color: #131313;
+            border-radius: 0.25rem;
+            box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+            max-width: 800px;
+            width: 95%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            font-family: 'DOTMBold', sans-serif;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-family: 'DOTMATRI', sans-serif;
+        }
+
+        .enter-button {
+            display: inline-block;
+            padding: 0.75rem 1rem;
+            background-color: #FFFFFF;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 0.125rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 2px solid #FFFFFF;
+            font-size: 1.25rem;
+            font-family: 'DOTMBold', sans-serif;
+            cursor: pointer;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .enter-button:hover {
+            background-color: #131313;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 1rem;
+            font-family: 'DOTMBold', sans-serif;
+            font-size: 0.9rem;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.125rem;
+            }
+
+            .enter-button {
+                font-size: 1.125rem;
+                width: 95%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="enter-container">
+        <h1>Welcome to Fullproof for Mornings</h1>
+        <p>Transform your mornings and unlock your full potential with our curated routines.</p>
+        <button class="enter-button">Enter</button>
+    </div>
+    <footer>
+        &copy; 2024 Fullproof
+    </footer>
+</body>
+</html>
