@@ -1,0 +1,62 @@
+/* Custom Font Import */
+@font-face {
+    font-family: 'HomeVideo';
+    src: url('fonts/HomeVideo-Regular.ttf') format('truetype');
+}
+
+/* Base Styles */
+body {
+    font-family: 'HomeVideo', sans-serif;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    padding: 10px;
+}
+
+/* Main Content Layout */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+/* Button Styling */
+button {
+    background-color: white;
+    color: black;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Routine Display Area */
+#routineDisplay {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Audio Control Buttons */
+#muteButton, #playButton {
+    position: absolute;
+    left: 20px;
+    bottom: 60px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Responsive Banner */
+#affiliateBanner {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
