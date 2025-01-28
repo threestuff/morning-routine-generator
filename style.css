@@ -1,62 +1,137 @@
-/* Custom Font Import */
 @font-face {
     font-family: 'HomeVideo';
     src: url('fonts/HomeVideo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Base Styles */
 body {
     font-family: 'HomeVideo', sans-serif;
     background-color: black;
     color: white;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+    letter-spacing: -0.5px;
 }
 
-/* Header Styles */
-header {
+header, footer {
     padding: 10px;
 }
 
-/* Main Content Layout */
 main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     padding: 20px 10px;
+    text-align: center;
 }
 
-/* Button Styling */
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 2px #aaa;
+}
+
+/* Button styling */
 button {
     background-color: white;
     color: black;
-    padding: 6px 12px;
     border: none;
+    padding: 6px 12px; /* Smaller padding for smaller button */
+    font-size: 1em;
     cursor: pointer;
-    transition: all 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 5px; /* Reduced margin-bottom */
+    border-radius: 1px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    letter-spacing: -0.5px;
 }
 
-/* Routine Display Area */
+button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
 #routineDisplay {
     width: 100%;
     max-width: 600px;
 }
 
-/* Audio Control Buttons */
+.category-section {
+    margin-bottom: 15px;
+}
+
+.activity {
+    background-color: #222;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.header-blurbs {
+    position: relative;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.blurb {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-size: 1em;
+    display: none;
+}
+
+.blurb.active {
+    opacity: 1;
+    display: block;
+}
+
 #muteButton, #playButton {
     position: absolute;
     left: 20px;
     bottom: 60px;
     background-color: transparent;
+    color: white;
     border: 2px solid white;
     border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
-/* Responsive Banner */
+#playButton {
+    left: 80px; /* Position play button next to mute button */
+}
+
+#muteButton:hover, #playButton:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+#bannerSection {
+margin-top: 20px; /* Adjusted margin-top for banner section */
+margin-bottom: 10px;
+width: 50%; /* Set the width of the banner section to 50% */
+max-width: 300px; /* Set max-width to control the maximum size */
+margin: 0 auto; /* Center the banner horizontally */
+}
+
 #affiliateBanner {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+width: 100%; /* Make the GIF fill the width of its container */
+height: auto; /* Maintain aspect ratio of the GIF */
+display: block;
+cursor: pointer; /* Indicates that the image is clickable */
 }
