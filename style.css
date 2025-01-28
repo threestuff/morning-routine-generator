@@ -94,6 +94,36 @@ button:hover {
     display: block;
 }
 
+<<<<<<< HEAD
+=======
+#muteButton, #playButton {
+    position: absolute;
+    left: 20px;
+    bottom: 60px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+#playButton {
+    left: 80px; /* Position play button next to mute button */
+}
+
+#muteButton:hover, #playButton:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+>>>>>>> 7f27972e37ef1e9f9a7c6170c3013a7a17c33463
 #bannerSection {
 margin-top: 20px; /* Adjusted margin-top for banner section */
 margin-bottom: 10px;
