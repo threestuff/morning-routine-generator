@@ -36,4 +36,4 @@ This project is open-source and available under the [MIT License](https://openso
 
 ## Live Demo
 
-Check out the live demo [](#) _(add a link to your hosted project if available)_.
+Check out the live demo [https://threestuff.github.io/morning-routine-generator/]
