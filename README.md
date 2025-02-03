@@ -16,7 +16,7 @@ The **Morning Routine Generator** is a simple, interactive web application desig
 
 ## How to Use
 
-1. Open the `index.html` file in your browser.
+1. Go to [https://threestuff.github.io/morning-routine-generator/].
 2. Click the **"Generate Your Morning Routine"** button to create a new routine.
 
 ## Technologies Used
