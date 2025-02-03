@@ -7,12 +7,9 @@ const categories = {
     function: ["Write down 3 tasks for the day", "Organize your workspace", "Review your goals for the day", "Check emails"]
 };
 
+
 let lastGenerationTime = 0;
 const cooldownPeriod = 10000; // 10 seconds in milliseconds
-
-let audioElements = [];
-let currentSongIndex = 0;
-let isMuted = false;
 
 const generateBtn = document.getElementById('generateBtn');
 const routineDisplay = document.getElementById('routineDisplay');
